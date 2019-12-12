@@ -1,6 +1,6 @@
 import express from 'express'
 import compression from 'compression'
-import { Generator, ImageOptions } from '../src/generator'
+import { Index, ImageOptions } from '../src'
 import fs from 'fs'
 
 const server = express()
@@ -37,7 +37,7 @@ server.get('/file', (req, res) => {
   const filePath = tmpDir + req.query.name + '.gif'
   const fileStream = fs.createWriteStream(filePath)
 
-  new Generator(options)
+  new Index(options)
     .setTimer(req.query.end || new Date(), req.query.timezone || 'UTC')
     .setOutputStream(fileStream)
     .encode().then(() => {
@@ -51,7 +51,7 @@ server.get('/stream', (req, res) => {
   const options: ImageOptions = {
     height: 100, width: 300, bg: '00FF00', color: 'FF0000', frames: 60, fontSize: 36, fontFamily: 'Arial'
   }
-  new Generator(options)
+  new Index(options)
     .setTimer(req.query.end || new Date(), req.query.timezone || 'UTC')
     .setOutputStream(res)
     .encode()

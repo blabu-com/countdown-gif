@@ -5,12 +5,13 @@
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
+    "pretest": "npm run lint",
     "test": "mocha --exit --opts test/mocha.opts test/*.spec.ts",
     "build": "tsc",
     "dev": "env NODE_ENV=development nodemon --exec ts-node sample/server.ts",
     "lint": "tslint -c tslint.json --project tsconfig.json 'src/**/*.ts' 'src/**/*.tsx' 'test/**/*.ts' 'test/**/*.tsx'",
     "lint:fix": "tslint --fix -c tslint.json --project tsconfig.json 'src/**/*.ts' 'src/**/*.tsx' 'test/**/*.ts' 'test/**/*.tsx'",
-    "prepublish": "npm run build"
+    "prepublishOnly": "npm run build"
   },
   "keywords": [
     "countdown",
