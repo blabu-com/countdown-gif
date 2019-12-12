@@ -1,6 +1,6 @@
 {
   "name": "@blabu.com/countdown-gif",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Use Node.js to generate an animated countdown gif.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
