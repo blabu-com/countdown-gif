@@ -25,7 +25,8 @@
     "canvas": "^2.6.0",
     "gifencoder": "^2.0.1",
     "moment": "^2.13.0",
-    "moment-timezone": "^0.5.27"
+    "moment-timezone": "^0.5.27",
+    "precommit": "^1.2.2"
   },
   "devDependencies": {
     "@types/moment": "^2.13.0",
