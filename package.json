@@ -1,0 +1,39 @@
+{
+  "name": "@blabu.com/countdown-gif",
+  "version": "1.0.0",
+  "description": "Use Node.js to generate an animated countdown gif.",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "test": "mocha --exit --opts test/mocha.opts test/*.spec.ts",
+    "build": "tsc",
+    "dev": "env NODE_ENV=development nodemon --exec ts-node sample/server.ts",
+    "lint": "tslint -c tslint.json --project tsconfig.json 'src/**/*.ts' 'src/**/*.tsx' 'test/**/*.ts' 'test/**/*.tsx'",
+    "lint:fix": "tslint --fix -c tslint.json --project tsconfig.json 'src/**/*.ts' 'src/**/*.tsx' 'test/**/*.ts' 'test/**/*.tsx'",
+    "prepublish": "npm run build"
+  },
+  "keywords": ["countdown", "gif", "generator"],
+  "repository": "https://github.com/blabu-com/countdown-gif.git",
+  "author": "Tomas Strejcek <tomas@blabu.com>",
+  "license": "MIT",
+  "dependencies": {
+    "canvas": "^2.6.0",
+    "gifencoder": "^2.0.1",
+    "moment": "^2.13.0",
+    "moment-timezone": "^0.5.27"
+  },
+  "devDependencies": {
+    "@types/moment": "^2.13.0",
+    "@types/node": "^12.12.17",
+    "compression": "^1.7.4",
+    "express": "^4.13.4",
+    "mocha": "^6.2.2",
+    "nodemon": "^2.0.2",
+    "pre-commit": "^1.2.2",
+    "ts-node": "^8.5.4",
+    "tslint": "^5.20.1",
+    "tslint-config-standard-plus": "^2.3.0",
+    "typescript": "^3.7.3"
+  },
+  "files": ["dist/**/*"]
+}

@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "rootDir": ".",
+    "module": "commonjs",
+    "lib": [
+      "es2017"
+    ],
+    "target": "es2017",
+    "esModuleInterop": true,
+    "allowJs": false,
+    "sourceMap": true,
+    "outDir": "dist",
+    "strictPropertyInitialization": false,
+    "baseUrl": ".",
+    "strictNullChecks": false,
+    "noUnusedLocals": true,
+    "declaration": true
+  },
+  "include": [
+    "src/*.ts",
+    "src/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "docs",
+    "coverage",
+    ".nyc_output",
+    "test"
+  ]
+}
