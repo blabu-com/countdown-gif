@@ -1,6 +1,6 @@
 {
   "name": "@blabu.com/countdown-gif",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Use Node.js to generate an animated countdown gif.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -12,7 +12,11 @@
     "lint:fix": "tslint --fix -c tslint.json --project tsconfig.json 'src/**/*.ts' 'src/**/*.tsx' 'test/**/*.ts' 'test/**/*.tsx'",
     "prepublish": "npm run build"
   },
-  "keywords": ["countdown", "gif", "generator"],
+  "keywords": [
+    "countdown",
+    "gif",
+    "generator"
+  ],
   "repository": "https://github.com/blabu-com/countdown-gif.git",
   "author": "Tomas Strejcek <tomas@blabu.com>",
   "license": "MIT",
@@ -35,5 +39,7 @@
     "tslint-config-standard-plus": "^2.3.0",
     "typescript": "^3.7.3"
   },
-  "files": ["dist/**/*"]
+  "files": [
+    "dist/**/*"
+  ]
 }
