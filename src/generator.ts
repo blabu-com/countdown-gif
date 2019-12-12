@@ -16,7 +16,7 @@ export type ImageOptions = {
   quality?: number
 }
 
-export class Index {
+export class Generator {
   public timeResult
   private stream
   private readonly encoder
@@ -51,7 +51,7 @@ export class Index {
     return ctx
   }
 
-  setTimer(end: Date | string, timezone = 'UTC'): Index {
+  setTimer(end: Date | string, timezone = 'UTC'): Generator {
     if (typeof end === 'string') {
       end = moment(end).toDate()
     }
@@ -59,7 +59,7 @@ export class Index {
     return this
   }
 
-  setOutputStream(stream: Stream): Index {
+  setOutputStream(stream: Stream): Generator {
     this.stream = stream
     return this
   }

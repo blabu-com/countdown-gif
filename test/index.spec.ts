@@ -1,4 +1,4 @@
-import { Index } from '../src'
+import { Generator } from '../src/generator'
 import { describe, it } from 'mocha'
 import * as assert from 'assert'
 import moment from 'moment'
@@ -6,14 +6,14 @@ import fs from 'fs'
 
 describe('GIF generator', () => {
   it('calculates remaining time properly (when no difference)', () => {
-    const gen = new Index({})
+    const gen = new Generator({})
     const date = new Date().toISOString()
     gen.setTimer(date, 'UTC')
     assert.strictEqual(gen.getDiff(gen.timeResult), null)
   })
 
   it('calculates remaining time properly (when minute difference)', () => {
-    const gen = new Index({})
+    const gen = new Generator({})
     const date = moment().add(60, 'second').toJSON()
     gen.setTimer(date, 'UTC')
     const time = gen.timeResult.asSeconds()
@@ -26,7 +26,7 @@ describe('GIF generator', () => {
     const filePath = tmpDir + 'test' + '.gif'
     const fileStream = fs.createWriteStream(filePath)
 
-    await new Index()
+    await new Generator()
       .setTimer(moment().add(60, 'second').toJSON(), 'UTC')
       .setOutputStream(fileStream)
       .encode()
